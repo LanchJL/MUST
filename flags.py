@@ -1,6 +1,6 @@
 import argparse
 
-DATA_FOLDER = ""
+DATA_FOLDER = "/media/yujiaguo/29719e14-8bb8-4829-90a4-727c2e661fc4/JCY/paper_code/czsl-main/data"
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
 parser.add_argument('--config', default='configs/args.yml', help='path of the config file (training only)')
@@ -85,14 +85,15 @@ parser.add_argument('--eval_val_every', type=int, default=1,help="Frequency of e
 parser.add_argument('--max_epochs', type=int, default=800,help="Max number of epochs")
 parser.add_argument("--fc_emb", default='768,1024,1200',help="Image embedder layer config")
 parser.add_argument("--gr_emb", default='d4096,d',help="graph layers config")
-
+#must
 parser.add_argument("--ratio", type=int, default=30,help="graph layers config")
 parser.add_argument("--tem", type=int, default=5,help="graph layers config")
 parser.add_argument("--attr_weights", type=float, default=0.4,help="graph layers config")
 parser.add_argument("--objs_weights", type=float, default=0.5,help="graph layers config")
 parser.add_argument("--attr_objs_fc_emb", default='768,1024,1200',help="graph layers config")
 parser.add_argument('--branch_emb_init', default=None, help='w2v|ft|gl|glove|word2vec|fasttext, name of embeddings to use for initializing the primitives')
-parser.add_argument("--l2_weights",type=float, default=1,help="graph layers config")
-parser.add_argument("--lr_decrease",type=float, default=60,help="graph layers config")
-parser.add_argument("--warming_epoch",type=float, default=60,help="graph layers config")
-parser.add_argument("--gamma",type=float, default=2,help="graph layers config")
+parser.add_argument("--l2_weights",type=float, default=1,help="lammda")
+parser.add_argument("--lr_decrease",type=float, default=60,help="smaller learning rate")
+parser.add_argument("--warming_epoch",type=float, default=60,help="using ce before training")
+parser.add_argument("--gamma",type=float, default=2,help="gamma")
+parser.add_argument("--test_weights_path",default='weights/',help="weights path for test")
