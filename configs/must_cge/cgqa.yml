@@ -1,0 +1,43 @@
+experiment:
+  name: graphembed/cgqa
+dataset:
+  data_dir: cgqa
+  dataset: cgqa
+  splitname: compositional-split-natural
+model_params:
+  model: must_cge
+  dropout: true
+  norm: true
+  nlayers:
+  fc_emb: 768,1024,1200
+  attr_objs_fc_emb: 2048,2048
+  branch_emb_init: word2vec
+  gr_emb: d4096,d
+  emb_dim: 512
+  emb_init: word2vec
+  image_extractor: resnet18
+  train_only: true
+training:
+  batch_size: 256
+  eval_val_every: 1
+  load:
+  lr: 5.0e-05
+  wd: 5.0e-05
+  lrg: 5.0e-06
+  margin: 2
+  max_epochs: 150
+  norm_family: imagenet
+  save_every: 10000
+  test_batch_size: 32
+  test_set: test
+  topk: 1
+  workers: 8
+  update_features: false
+  freeze_featues: false
+  tem: 15
+  objs_weights: 1.5
+  l2_weights: 1.0
+  warming_epoch: 30
+  lr_decrease: 100
+  gamma: 12.0
+

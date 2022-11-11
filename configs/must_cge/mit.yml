@@ -1,0 +1,42 @@
+---
+experiment:
+  name: graphembed/mitstates/base
+dataset:
+  data_dir: mit-states
+  dataset: mitstates
+  splitname: compositional-split-natural
+model_params:
+  model: must_cge
+  dropout: true
+  norm: true
+  nlayers: 
+  gr_emb: d4096,d
+  emb_dim: 512
+  branch_emb_init: ft+w2v
+  attr_objs_fc_emb: 768,1024,1200
+  #attr_objs_fc_emb: 768,768
+  graph_init: utils/mitstates-graph.t7
+  image_extractor: resnet18
+  train_only: true
+  tem: 5
+  objs_weights: 0.8 #maybe smaller 0.5-0.8
+  l2_weights: 1.5
+  warming_epoch: 10
+  lr_decrease: 60
+training:
+  batch_size: 128
+  eval_val_every: 1
+  load: 
+  lr: 5.0e-05
+  wd: 5.0e-05
+  lrg: 5.0e-6
+  margin: 0.5
+  max_epochs: 350
+  norm_family: imagenet
+  save_every: 10000
+  test_batch_size: 32
+  test_set: test
+  topk: 1
+  workers: 8
+  freeze_features: false
+#ft+w2v
