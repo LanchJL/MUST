@@ -1,6 +1,6 @@
 import argparse
 
-DATA_FOLDER = "/media/yujiaguo/29719e14-8bb8-4829-90a4-727c2e661fc4/JCY/paper_code/czsl-main/data"
+DATA_FOLDER = ""
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
 parser.add_argument('--config', default='configs/args.yml', help='path of the config file (training only)')
