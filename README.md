@@ -12,3 +12,9 @@ If you wish to try training our model from scratch, please run train.py, for exa
   python train.py --config CONFIG_FILE
 ```
 
+## Test
+Please specify the path for the trained weights, and than run:
+
+```shell
+   python test.py --config CONFIG_FILE test_weights_path --WEIGHTS_PATH
+```
