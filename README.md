@@ -1,4 +1,5 @@
 # Mutual Balancing in State-Object Components for Compositional Zero-Shot Learning (MUST)
+The code of Mutual Balancing in State-Object Components for Compositional Zero-Shot Learning (PR 2024)
 
 ## Datasets
 The splits of dataset and its attributes can be found in utils/download_data.sh, the complete installation process can be found in [CGE] https://github.com/ExplainableML/czsl
